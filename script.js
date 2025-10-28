@@ -72,12 +72,12 @@ $form.addEventListener('submit', function (e) {
         return;
     }
 
-    // --- IDs de EmailJS (CONFIRMADOS) ---
-    // Service ID: gsalon
-    const SERVICE_ID = 'gsalon';
-    // DEBES CREAR estas plantillas en tu cuenta de EmailJS
-    const TEMPLATE_ID_CLIENTE = 'template_cliente_confirmacion';
-    const TEMPLATE_ID_EMPRESA = 'template_empresa_notificacion';
+    // --- IDs de EmailJS (CORREGIDOS para coincidir con tus plantillas) ---
+    const SERVICE_ID = 'gsalon'; // Tu Service ID
+    
+    // NOMBRES CORREGIDOS (debe coincidir con la imagen que enviaste)
+    const TEMPLATE_ID_CLIENTE = 'template_cliente_confirm'; 
+    const TEMPLATE_ID_EMPRESA = 'template_empresa_notific';
 
     // --- PRIMER ENVÍO: CORREO AL CLIENTE (CONFIRMACIÓN) ---
     emailjs.send(SERVICE_ID, TEMPLATE_ID_CLIENTE, {
@@ -91,7 +91,6 @@ $form.addEventListener('submit', function (e) {
             console.log('Correo de cliente enviado con éxito:', r);
 
             // --- SEGUNDO ENVÍO: NOTIFICACIÓN INTERNA A LA EMPRESA ---
-            // El destinatario es la dirección asociada al Template_Empresa (tu email: quinonezemilioig@gmail.com)
             return emailjs.send(SERVICE_ID, TEMPLATE_ID_EMPRESA, {
                 name: nombre,
                 email: email, // Correo del cliente (para referencia en la notificación)

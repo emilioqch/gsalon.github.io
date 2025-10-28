@@ -74,9 +74,9 @@ $form.addEventListener('submit', function (e) {
 
     // --- IDs de EmailJS (CORREGIDOS FINALMENTE) ---
     const SERVICE_ID = 'gsalon'; 
-    // Los IDs de plantilla deben ser EXACTOS a tus plantillas en EmailJS
-    const TEMPLATE_ID_CLIENTE = 'template_cliente_confirm'; // CORRECCIÓN
-    const TEMPLATE_ID_EMPRESA = 'template_empresa_notific'; // CORRECCIÓN
+    // Estos IDs deben ser EXACTOS a tus plantillas en EmailJS
+    const TEMPLATE_ID_CLIENTE = 'template_cliente_confirm'; 
+    const TEMPLATE_ID_EMPRESA = 'template_empresa_notific'; 
 
     // --- PRIMER ENVÍO: CORREO AL CLIENTE (CONFIRMACIÓN) ---
     emailjs.send(SERVICE_ID, TEMPLATE_ID_CLIENTE, {
